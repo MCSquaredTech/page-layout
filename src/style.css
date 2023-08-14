@@ -20,33 +20,12 @@ body {
 }
 
 .header {
+  display: flex;
   height: 60px;
+  display: flex;
   flex-shrink: 0;
   line-height: 60px;
   padding: 0 8px;
-}
-
-.header-col-right { 
-  width: 250px; 
-  /* min-width: 80px; */
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  text-align: center;
-  bottom: 10px;
-  left: 25px;
-}
-
-.header-col-right div { 
-  flex-grow: 1;
-  padding: 4px 8px;
-  
-}
-
-.header-col-content {
-  overflow-x: auto;
-  width: calc(100vw - 250px);
-  padding: 0px 8px;
 }
 
 .footer {
@@ -73,12 +52,12 @@ body {
 }
 
 .left-col {
-  width: 250px;
-  /* min-width: 80px; */
+  width: 15%;
   height: calc(100vh - 90px);
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+  flex-flow: wrap;
 }
 
 
@@ -91,7 +70,7 @@ body {
 }
 
 .left-col-header div {
-  flex-grow: 1;
+  flex-grow: 2;
   padding: 4px 8px;
 }
 
@@ -154,7 +133,8 @@ input {
 /* Company Search Component */
 
 .search-col { 
-  width: 250px;
+  width: 30%;
+  float: left;
   /* min-width: 80px; */
   height: calc(100vh - 170px);
   flex-shrink: 0;
@@ -174,6 +154,22 @@ input {
   flex-grow: 1;
   display: flex;
   align-items: start;
-  border-right: solid 1px #777;
   height: 20vh;
+}
+
+/* Company Address Style Sheet */
+
+.company-address-form { 
+  width: clac(100vw - 30%);
+  display: flex; 
+  flex-direction: column wrap;
+  flex-grow: 2;
+  padding: 2px 0 0 5px; 
+  margin: 4px;
+}
+
+.input-block { 
+  display: block; 
+  padding: 5px; 
+  margin: 2px;
 }

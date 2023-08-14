@@ -9,13 +9,9 @@ const CompanySearch = () => {
                 <div class="search-input-wrapper">
                     <input type="text" placeholder="Search" />
                 </div>
-                <div class="search-button-wrapper">
-                    <button className='btn btn-dark' type="button" >Go</button>
-                </div>
             </div>
             <hr  style={{padding: "0"}}/>
-            <div class="company-col-content">
-                
+            <div class="company-col-content"> 
             </div>
         </aside>
     </div>

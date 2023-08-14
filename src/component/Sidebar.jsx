@@ -64,7 +64,6 @@ const LeftSidebar = () => {
           component={<Link to="/people" />} 
           >Card View</MenuItem>
       </Menu>
-      
     </Sidebar>
   )
 }
