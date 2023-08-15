@@ -3,7 +3,7 @@ import { AddressAutofill } from '@mapbox/search-js-react';
 
 const AddressSearch = () => {
   const [value, setValue] = useState('')
-  const mapToken = "pk.eyJ1IjoiY21hcmtlbnNlbiIsImEiOiJjbGxiOWVsaDAwNHljM2txbGJmaDlqdHJxIn0.BXjygUd_tOsHX-XZokpcJg"
+  
   const handleChange = (e) => { 
     const { name, value } = e;
     setValue(value);
