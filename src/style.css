@@ -153,7 +153,7 @@ input {
 .company-col-content{
   flex-grow: 1;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   height: 20vh;
 }
 
@@ -171,5 +171,12 @@ input {
 .input-block { 
   display: block; 
   padding: 5px; 
-  margin: 2px;
+  margin-left: 5px;
+  margin-bottom: 25px;
+}
+
+.input-inline { 
+  padding: 4px; 
+  margin-left: 5px;
+  margin-bottom: 25px;
 }

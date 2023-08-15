@@ -10,7 +10,7 @@ const Companies = () => {
         <CompanySearch />
       </div>
       <div className='company-address-form'>
-        <AddressSearch />
+        <AddressSearch mapToken/>
       </div>  
     </>
     )

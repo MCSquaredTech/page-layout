@@ -8,6 +8,7 @@ import { Outlet } from 'react-router-dom';
 const PageLayout = () => {
     return (
         <div class="wrapper">
+            
             <div class="header"><Header /></div>
             <div class="content">
                 <aside class="left-col">

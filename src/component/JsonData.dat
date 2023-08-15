@@ -1,0 +1,103 @@
+[
+ {
+  "Name": "Brooks Internet Software",
+  "Sector": "Commercial",
+  "Relationship": "None",
+  "Phone": "(208)523-6970",
+  "Fax": "None",
+  "URL": "https://www.brooksnet.com",
+  "id": "1"
+ },
+  {
+  "Name": "Brooks Equipment Co",
+  "Sector": "Commercial",
+  "Relationship": "Customer",
+  "Phone": "(704)916-3430",
+  "Fax": "(704)596-3771",
+  "URL": "http://www.brooksequipment.com",
+  "id": "2"
+ },
+  {
+  "Name": "Brooks Instrument",
+  "Sector": "Commercial",
+  "Relationship": "Prospect",
+  "Phone": "(215)362-3500",
+  "Fax": "None",
+  "URL": "http://brooksinstrument.com",
+  "id": "3"
+ }
+]
+
+// Address 
+
+[
+ {
+  "Address": "Address 1",
+  "Unit": "Unit 1",
+  "City": "City 1",
+  "State": "State 1",
+  "PostalCode": "PostalCode 1",
+  "Country": "Country 1",
+  "FK_Company": 66,
+  "id": "1",
+  "CompanyId": "1"
+ },
+ {
+  "Address": "Address 2",
+  "Unit": "Unit 2",
+  "City": "City 2",
+  "State": "State 2",
+  "PostalCode": "PostalCode 2",
+  "Country": "Country 2",
+  "FK_Company": 77,
+  "id": "2",
+  "CompanyId": "2"
+ },
+ {
+  "Address": "Address 3",
+  "Unit": "Unit 3",
+  "City": "City 3",
+  "State": "State 3",
+  "PostalCode": "PostalCode 3",
+  "Country": "Country 3",
+  "FK_Company": 87,
+  "id": "3",
+  "CompanyId": "3"
+ }
+]
+
+[
+ {
+  "Address": "356 West Sunnyside Road",
+  "Unit": "Suite A",
+  "City": "Idaho Falls",
+  "State": "ID",
+  "PostalCode": "83402",
+  "Country": "United States",
+  "FK_Company": 1,
+  "id": "1",
+  "CompanyId": "1"
+ },
+ {
+  "Address": "10926 David Taylor Drive",
+  "Unit": "",
+  "City": "Charlotte",
+  "State": "NC",
+  "PostalCode": "28262",
+  "Country": "United States",
+  "FK_Company": 2,
+  "id": "2",
+  "CompanyId": "2"
+ },
+ {
+  "Address": "470 West Vine Street",
+  "Unit": "",
+  "City": "Hatfield",
+  "State": "PA",
+  "PostalCode": "19440",
+  "Country": "United States",
+  "FK_Company": 3,
+  "id": "3",
+  "CompanyId": "3"
+ }
+]

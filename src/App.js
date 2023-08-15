@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 import { Routes, Route } from 'react-router-dom';
@@ -11,11 +12,12 @@ import PageLayout from "./pages/PageLayout";
 import Dashboard from "./pages/Dashboard";
 import Companies from "./pages/Companies";
 
-import './style.css'
+import './style.css';
 
 
 
 function App() {
+  console.log(process.env.REACT_APP_Title);
   return (
     <>
       <Routes>
