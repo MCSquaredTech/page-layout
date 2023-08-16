@@ -143,19 +143,71 @@ input {
 }
 
 .search-col-header { 
-  height: 40px;
+  height: 30px;
   flex-shrink: 0;
   align-items: center;
-  border-right: solid 1px #777;
+
+  display: block;
+}
+
+.search { 
   display: flex;
+}
+
+.search .input { 
+  background: #777;
+  color: #ddd;
+  margin-right: 10px;
+  padding: 5px;
+  height: 20px;
+}
+
+.search-icon { 
+  height: 60px; 
+  width: 50px;
+  background-color: #bbb;
+  display: grid;
+  place-items: center;
+}
+
+.search-results { 
+  margin-top: 5px; 
+  width: 325px; 
+  height: 300px; 
+  box-shadow: rgb(0,0,0,0.45) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+  top: 0px;
+  background-color: #aaa; 
+  color: #222; 
+}
+
+.search-results::-webkit-scrollbar { 
+  display: none;
+}
+
+.search .input-block { 
+    display: block; 
+    padding: 5px; 
+    margin-left: 0px;
+    margin-bottom: 5px;
+}
+
+.search-results .data-items { 
+  width: 100%;
+  height: 50px;
+  /* display: flex; */
+  align-items: center;
+   
 }
 
 .company-col-content{
   flex-grow: 1;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   height: 20vh;
 }
+
 
 /* Company Address Style Sheet */
 
@@ -168,7 +220,7 @@ input {
   margin: 4px;
 }
 
-.input-block { 
+.company-address-form .input-block { 
   display: block; 
   padding: 5px; 
   margin-left: 5px;

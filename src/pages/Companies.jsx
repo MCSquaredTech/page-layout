@@ -2,12 +2,12 @@ import React from 'react'
 import CompanySearch from '../component/CompanySearch'
 import AddressSearch from '../component/AddressSearch'
 
-const Companies = () => {
+const Companies = ({placeholder, data}) => {
   return (
     <>
       <div>
-        <h1>Companies </h1> 
-        <CompanySearch />
+        <h3>Company</h3>
+        <CompanySearch placeholder={placeholder} data={data} />
       </div>
       <div className='company-address-form'>
         <AddressSearch mapToken/>

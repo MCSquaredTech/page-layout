@@ -7,11 +7,11 @@ import { Outlet } from 'react-router-dom';
 
 const PageLayout = () => {
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             
-            <div class="header"><Header /></div>
-            <div class="content">
-                <aside class="left-col">
+            <div className="header"><Header /></div>
+            <div className="content">
+                <aside className="left-col">
                     {/* <div class="left-col-header">
                         <div class="search-input-wrapper">
                             <input type="text" placeholder="Search" />
@@ -20,13 +20,13 @@ const PageLayout = () => {
                             <button type="button" >Go</button>
                         </div>
                     </div> */}
-                    <div class="left-col-content">
+                    <div className="left-col-content">
                         <LeftSidebar />
                     </div>
                 </aside>
-                <main class="right-col"><Outlet /></main>
+                <main className="right-col"><Outlet /></main>
             </div>
-            <div class="footer"><Footer /></div>
+            <div className="footer"><Footer /></div>
         </div>
     )
 }

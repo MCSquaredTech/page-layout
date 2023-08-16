@@ -1,12 +1,12 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Routes, Route } from 'react-router-dom';
 
+import { CompanyDataSourceAPI } from './DataSourceAPI/CompanyDataSource';
+
 import Contacts from "./pages/Contacts";
 import Error from "./pages/Error";
-import NewContact from "./pages/NewContact";
-import PersonCard from "./pages/PersonCard";
 import PersonDetail from "./pages/PersonDetail";
 import PageLayout from "./pages/PageLayout";
 import Dashboard from "./pages/Dashboard";
@@ -17,13 +17,37 @@ import './style.css';
 
 
 function App() {
-  console.log(process.env.REACT_APP_Title);
+  const [ companies, setCompanies  ] = useState([]);
+  const [ value, setValue ] = useState('');
+
+
+  const getCompanyData = async () => { 
+    setCompanies(await CompanyDataSourceAPI.getCompany());
+  }
+
+  const handleSelected = (company) => { 
+    // Do Something
+  }
+
+  const handleChange = (e) => { 
+    setValue(e.target.value());
+  } 
+
+  useEffect(() =>{ 
+    // Companies DataSource - 
+    getCompanyData();  
+  },[]);
+  
   return (
     <>
       <Routes>
         <Route element={<PageLayout />} >
           <Route path="/" element={<Dashboard />} />
-          <Route path="/companies" element={<Companies />} />
+          <Route path="/companies" element={<Companies 
+                                             placeholder={"Company Search..."}
+                                             data={companies}
+                                             onClick={handleSelected}
+                                                 />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/person/:id" element={<PersonDetail />} />
           <Route path="*" element={<Error />} />

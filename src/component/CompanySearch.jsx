@@ -1,34 +1,46 @@
 import React, { useState } from 'react';
+import { AiOutlineSearch } from 'react-icons/ai';
 
-const CompanySearch = () => {
+const CompanySearch = ({placeholder, data, handleSelected}) => {
   const [ search, setSearch ] =  useState('')
-
+ 
   const handleSearch = (e) => { 
       const search = e.target.value; 
 
       setSearch(search); 
-      console.log(search);
+  }
+
+  const handleHoverOver = () => { 
+    // Do something 
   }
 
   return (
     <>
-      <div class="company-content">
-        <aside class="search-col">
-            <div class="search-col-header input-block">
-                <div class="search-input-wrapper">
-                <input type='text'
-                    className='input-block'
-                    autoComplete='address-line1'
-                    name='company'
-                    value={ search }
-                    size={"45"}
-                    placeholder='Company Name'
-                    onChange={handleSearch}
-                    /> 
+      <div className="company-content">
+        <aside className="search-col">
+            <div className="search-col-header">
+                <div className="search-input-wrapper">
+                  <div className="search">
+                    <input type='text'
+                      className='input-block'
+                      autoComplete='search-list'
+                      name='company'
+                      value={ search }
+                      size={"35"}
+                      placeholder={placeholder}
+                      onChange={handleSearch}
+                      /> 
+                    <div className="searchIcon">
+                      <AiOutlineSearch size={"26"} />
+                    </div> 
+                  </div>  
                 </div>
-            </div>
-            <hr  style={{padding: "0"}}/>
-            <div class="company-col-content"> 
+                <div className="search-results">
+                  {data.map((value, key) => {
+                    {console.log(value.Name)}
+                    <a href="#" className="c">{value.Name}</a>
+                  })}
+                </div>
             </div>
         </aside>
     </div>

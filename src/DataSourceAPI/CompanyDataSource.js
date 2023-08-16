@@ -6,7 +6,7 @@ class CompanyDataSource {
 
     getCompany = async () => { 
         try{ 
-            const resp = await fetch(`${mockApiKey}/`);
+            const resp = await fetch(`${mockApiKey}/Company`);
             return await resp.json(); 
         } catch (e) { 
             console.log('The Fetch Company Request Failed', e);
@@ -15,16 +15,16 @@ class CompanyDataSource {
 
     getCompanyById = async (Company) => { 
         try { 
-            const resp = await fetch(`${mockApiKey}/${Company.id}`);
+            const resp = await fetch(`${mockApiKey}/Company/${Company.id}`);
             return await resp.json();
         } catch (e) { 
             console.log('The Fetch Company by Id Request Failed', e);
         }
     }
 
-    postCompany = async (Company) {
+    postCompany = async (Company) => {
         try { 
-            const resp = await fetch(`${mockApiKey}`,
+            const resp = await fetch(`${mockApiKey}/Company`,
             {
                 method: "POST",
                 header: { 
@@ -40,7 +40,7 @@ class CompanyDataSource {
 
     putCompany = async (Company) => { 
         try { 
-            const resp = await fetch(`$(mockApiKey)/${Company.id}`,
+            const resp = await fetch(`$(mockApiKey)/Company/${Company.id}`,
             {
                 method: "PUT",
                 header: {
@@ -67,4 +67,4 @@ class CompanyDataSource {
     }
 }
 
-export const CompanyDataSource = new CompanyDataSource(); 
+export const CompanyDataSourceAPI = new CompanyDataSource(); 

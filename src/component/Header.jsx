@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import * as bsIcons from 'react-icons/bs';
+// import * as bsIcons from 'react-icons/bs';
 import * as biIcons from 'react-icons/bi';
 import * as giIcons from 'react-icons/gi';
 

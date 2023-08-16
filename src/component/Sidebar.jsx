@@ -8,7 +8,6 @@ import {
   Sidebar, 
   Menu, 
   MenuItem, 
-  SubMenu
 } from 'react-pro-sidebar';
 
 // https://codesandbox.io/s/react-sidebar-routing-boj4c?file=/src/components/Sidebar.js
@@ -33,7 +32,7 @@ const LeftSidebar = () => {
       collapsed={collapsed}
       toggled={toggled}
       onToggle={handleToggled}
-      onCollapsed={handleCollapsed}
+      onChange={handleCollapsed}
       breakPoint="md" 
       backgroundColor='#222'
       >    
@@ -61,7 +60,7 @@ const LeftSidebar = () => {
           >Contacts</MenuItem>
         <MenuItem className='sidebar-menuitem'
           icon={<faIcons.FaRegIdBadge size={"20px"}/>}
-          component={<Link to="/people" />} 
+          component={<Link to="/person/:id" />} 
           >Card View</MenuItem>
       </Menu>
     </Sidebar>

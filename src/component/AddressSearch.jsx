@@ -5,11 +5,9 @@ const AddressSearch = () => {
   const [value, setValue] = useState('')
   
   const mapToken = process.env.REACT_APP_MAPBOX_APIKEY;
-  console.log(mapToken);
 
   const handleChange = (e) => { 
-    const { value } = e;
-    setValue(value);
+    setValue(e.target.value());
   } 
 
   return (
@@ -30,7 +28,8 @@ const AddressSearch = () => {
             className='input-block' 
             autoComplete='address-line2'
             name='unit'
-            value={value}
+            // value={value}
+            placeholder='Optional Information'
             size={"45"}
 
           /> 
@@ -38,7 +37,8 @@ const AddressSearch = () => {
             className='input-inline' 
             autoComplete='address-level2'
             name='city'
-            value={value}
+            // value={value}
+            placeholder='City'
             size={"20"}
 
           /> 
@@ -46,7 +46,8 @@ const AddressSearch = () => {
             className='input-inline' 
             autoComplete='address-level1'
             name='state'
-            value={value}
+            // value={value}
+            placeholder='State'
             size={"5"}
 
           /> 
@@ -54,7 +55,8 @@ const AddressSearch = () => {
             className='input-inline' 
             autoComplete='postal-code'
             name='postalcode'
-            value={value}
+            // value={value}
+            placeholder='Postal Code'
             size={"10"}
 
           /> 
@@ -62,14 +64,12 @@ const AddressSearch = () => {
             className='input-block' 
             autoComplete='country-name'
             name='country'
-            value={value}
+            // value={value}
+            placeholder='Country'
             size={"20"}
-
-          /> 
-        
+          />
       </form>
     </div>
-  )
-}
-
+  )}
+        
 export default AddressSearch
