@@ -13,7 +13,7 @@ const CompanySearch = ({placeholder, data, handleSelected}) => {
   const handleHoverOver = () => { 
     // Do something 
   }
-
+  console.log(data);
   return (
     <>
       <div className="company-content">
@@ -36,10 +36,12 @@ const CompanySearch = ({placeholder, data, handleSelected}) => {
                   </div>  
                 </div>
                 <div className="search-results">
-                  {data.map((value, key) => {
-                    {console.log(value.Name)}
-                    <a href="#" className="c">{value.Name}</a>
-                  })}
+                  <div className="data-items">
+                    {data.map((value, key) => {
+                      <a href="#" className="item" style={{color: "black"}}>Help</a>
+                    })}
+                  </div>
+                    
                 </div>
             </div>
         </aside>

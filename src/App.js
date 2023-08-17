@@ -40,6 +40,7 @@ function App() {
   
   return (
     <>
+      {console.log(companies)}
       <Routes>
         <Route element={<PageLayout />} >
           <Route path="/" element={<Dashboard />} />
