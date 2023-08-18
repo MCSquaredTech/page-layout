@@ -7,7 +7,7 @@ const AddressSearch = () => {
   const mapToken = process.env.REACT_APP_MAPBOX_APIKEY;
 
   const handleChange = (e) => { 
-    setValue(e.target.value());
+    setValue(e.target.value);
   } 
 
   return (

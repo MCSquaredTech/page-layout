@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 
-const CompanySearch = ({placeholder, data, handleSelected}) => {
+const CompanySearch = ({placeholder, data, handleSelected, handleChange}) => {
   const [ search, setSearch ] =  useState('')
  
   const handleSearch = (e) => { 

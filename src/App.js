@@ -48,6 +48,7 @@ function App() {
                                              placeholder={"Company Search..."}
                                              data={companies}
                                              onClick={handleSelected}
+                                             onChange={handleChange}
                                                  />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/person/:id" element={<PersonDetail />} />

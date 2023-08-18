@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import * as fa  from 'react-icons/fa'
-import * as gr from 'react-icons/gr'
+import SearchIcon from '@mui/icons-material/Search'; 
+import CloseIcon from '@mui/icons-material/Close'; 
+import AddIcon from '@mui/icons-material/Add'
 
 import './AutofillSearch.css';
+import { Search } from '@mui/icons-material';
 
 const AutofillSearch = ({placeholder, data}) => {
     const [ dataFilter, setDataFilter ] = useState([]);
@@ -31,18 +33,27 @@ const AutofillSearch = ({placeholder, data}) => {
                     <input type='text'
                         name='company'
                         value={search}
-                        size={"35"}
                         placeholder={placeholder}
                         onChange={handleSearch}
                         /> 
                     <div className="searchIcon">
-                        {dataFilter.length === 0 ?
-                            (
-                            <fa.FaSearch size={"20"} color={"black"}/>   
+                        { search.length === 0 ? (
+                            <SearchIcon />
                         ) : (
-                            <gr.GrClose size={"20"}/>
+                            dataFilter.length === 0 ? (
+                                <AddIcon />
+                            ) : (
+                                <CloseIcon />
+                            )
                         )}
-                    </div>       
+                    </div>      
+                    <div className="dataResult">
+                        {data.map((value, key) => {
+                            return <a className='dataItem'>
+                                        <p>{value.Name}</p>
+                                    </a>
+                        })}
+                    </div>
                 </div>
             </div>
         </aside>
