@@ -11,6 +11,7 @@ import PersonDetail from "./pages/PersonDetail";
 import PageLayout from "./pages/PageLayout";
 import Dashboard from "./pages/Dashboard";
 import Companies from "./pages/Companies";
+import NewCompany from "./pages/NewCompany";
 
 import './style.css';
 
@@ -44,12 +45,18 @@ function App() {
       <Routes>
         <Route element={<PageLayout />} >
           <Route path="/" element={<Dashboard />} />
-          <Route path="/companies" element={<Companies 
-                                             placeholder={"Company Search..."}
-                                             data={companies}
-                                             onClick={handleSelected}
-                                             onChange={handleChange}
-                                                 />} />
+          <Route path="/companies" 
+                 element={<Companies 
+                    placeholder={"Company Search..."}
+                    data={companies}
+                    onChange={handleChange}
+                        />} >
+              <Route path="/companies/:new" 
+                   element={<NewCompany 
+                   data={companies}
+                   onChange={handleChange} />} />                                      
+          </Route>
+              
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/person/:id" element={<PersonDetail />} />
           <Route path="*" element={<Error />} />

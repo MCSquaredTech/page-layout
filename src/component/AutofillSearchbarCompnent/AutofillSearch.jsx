@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search'; 
 import CloseIcon from '@mui/icons-material/Close'; 
 import AddIcon from '@mui/icons-material/Add'
+import { Link } from 'react-router-dom';
 
 import './AutofillSearch.css';
-import { Search } from '@mui/icons-material';
 
 const AutofillSearch = ({placeholder, data}) => {
     const [ dataFilter, setDataFilter ] = useState([]);
@@ -24,6 +24,27 @@ const AutofillSearch = ({placeholder, data}) => {
             setDataFilter(newFilter);
         }
     }
+    const handleSelected = (value) => { 
+        console.log(value);
+    }
+
+    const handleKeyPress = (e) => { 
+        const keyPressed = e.key; 
+        if (keyPressed === "Enter" ) {
+            handleClear(); 
+
+        }
+    }
+
+    const handleAdd = () => { 
+        console.log("here!");
+        <Link to="/company/new" state={search} />
+    }
+
+    const handleClear = () => { 
+        setDataFilter([]);
+        setSearch('')
+    }
 
   return (
     <div className="company-content">
@@ -35,25 +56,34 @@ const AutofillSearch = ({placeholder, data}) => {
                         value={search}
                         placeholder={placeholder}
                         onChange={handleSearch}
+                        onKeyDown={handleKeyPress}
                         /> 
                     <div className="searchIcon">
                         { search.length === 0 ? (
                             <SearchIcon />
                         ) : (
                             dataFilter.length === 0 ? (
-                                <AddIcon />
+                                <Link to="/new" state={search} >
+                                   <AddIcon id="cursorPointer" />  
+                                </Link> 
                             ) : (
-                                <CloseIcon />
+                                <CloseIcon id="cursorPointer" onClick={handleClear} />    
                             )
                         )}
-                    </div>      
+                    </div>    
+                    { search.length >= 3 && dataFilter.length != 0 && (           
                     <div className="dataResult">
-                        {data.map((value, key) => {
-                            return <a className='dataItem'>
-                                        <p>{value.Name}</p>
+                        {dataFilter.map((value, key) => {
+                            return <a key={value.id} 
+                                      href="#" 
+                                      className='dataItem' 
+                                      onClick={() => handleSelected(value)}
+                                    >
+                                        <p >{value.Name}</p>
                                     </a>
                         })}
                     </div>
+                )}
                 </div>
             </div>
         </aside>

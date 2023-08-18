@@ -1,0 +1,3 @@
+https://codesandbox.io/s/react-hooks-navigate-list-with-keyboard-eowzo?file=/src/index.js:896-1176
+https://github.com/machadop1407/React-Search-Bar/blob/main/search-bar-code/src/Components/SearchBar.js
+https://www.youtube.com/watch?v=x7niho285qs
