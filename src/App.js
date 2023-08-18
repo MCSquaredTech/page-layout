@@ -46,16 +46,13 @@ function App() {
         <Route element={<PageLayout />} >
           <Route path="/" element={<Dashboard />} />
           <Route path="/companies" 
-                 element={<Companies 
+                 element={<Companies
                     placeholder={"Company Search..."}
                     data={companies}
                     onChange={handleChange}
-                        />} >
-              <Route path="/companies/:new" 
-                   element={<NewCompany 
-                   data={companies}
-                   onChange={handleChange} />} />                                      
-          </Route>
+                        />}  />
+          <Route path="/companies/new" 
+                  element={<NewCompany />} />                                     
               
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/person/:id" element={<PersonDetail />} />

@@ -38,7 +38,7 @@ const AutofillSearch = ({placeholder, data}) => {
 
     const handleAdd = () => { 
         console.log("here!");
-        <Link to="/company/new" state={search} />
+        return <Link to="/companies/new" state={search} />
     }
 
     const handleClear = () => { 
@@ -62,10 +62,8 @@ const AutofillSearch = ({placeholder, data}) => {
                         { search.length === 0 ? (
                             <SearchIcon />
                         ) : (
-                            dataFilter.length === 0 ? (
-                                <Link to="/new" state={search} >
-                                   <AddIcon id="cursorPointer" />  
-                                </Link> 
+                            dataFilter.length === 0 ? (    
+                                <AddIcon id="cursorPointer" />     
                             ) : (
                                 <CloseIcon id="cursorPointer" onClick={handleClear} />    
                             )
